@@ -1,0 +1,54 @@
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-paginate
+  - jekyll-algolia
+  - jekyll-timeago
+  - liquid-md5
+  - jekyll-mentions
+  - jemoji
+
+# Timeago
+jekyll_timeago:
+  translations_path: '_data/timeago/*.yaml'
+  default_locale: 'es'
+  fallbacks: true
+  available_locales:
+    - 'es'
+
+# Pagination
+paginate: 5
+paginate_path: "/blog/pagina-:num/"
+
+# Algolia Search
+algolia:
+  search_only_api_key: 987bd93f0d16bb8da8b7047511d9960a
+  application_id: UZX5345ZJV
+  index_name: blog
+  files_to_exclude:
+    - contribuidores.html
+    - sobre-mi.html
+    - blog/index.html
+    - autores/*.html
+
+collections:
+  autores:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "autores"
+    values:
+      layout: "author"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"

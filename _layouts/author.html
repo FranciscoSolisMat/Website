@@ -1,0 +1,27 @@
+---
+layout: default
+title: Page!
+---
+
+<div class="flex flex-col">
+    <div class="flex flex-row">
+        <img src="https://gravatar.com/avatar/{{ page.gravatar | downcase | md5 }}?s=100" alt="" class="rounded-md mr-5">
+        <div class="flex-col">
+            <h1 class="text-red-600">{{ page.name }}</h1>
+            <span class="text-gray-500">{{ page.content | markdownify }}</span>
+        </div>
+    </div>
+
+    <div class="flex flex-col mt-10">
+        <h2 class="tex-gray-800">Posts creados por {{ page.name }}</h2>
+        <div class="grid grid-cols-4 gap-2">
+            {% assign filtered_posts = site.posts | where: 'author', page.username %}
+            {% for post in filtered_posts %}
+            <div class="border border-gray-700 rounded-md p-2 cursor-pointer hover:shadow-2xl transition-all duration-500" onclick="window.location = '{{ post.url }}'">
+                <h3 class="text-green-500">{{ post.title }}</h3>
+                <span class="text-gray-500 line-clamp-2">{{ post.excerpt }}</span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

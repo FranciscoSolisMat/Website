@@ -1,0 +1,15 @@
+- name: Inicio
+  link: /index.html
+  target: _self
+- name: Blog
+  link: /blog/
+  target: _self
+- name: Contribuidores
+  link: /contribuidores.html
+  target: _self
+- name: Sobre Mi
+  link: /sobre-mi.html
+  target: _self
+- name: Donar
+  link: http://go.franciscosolis.cl/donate
+  target: _blank

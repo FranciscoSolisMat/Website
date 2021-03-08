@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FranciscoSolis - {{ page.title }}</title>
+
+    {% feed_meta %}
+    {% seo %}
+
+    <!-- Styles -->
+    {% include styles.html %}
+
+    <!-- Scripts -->
+    {% include scripts.html %}
+
+    <link rel="shortcut icon" href="/favicon.ico" />
+</head>
+<body id="body">
+<div>
+    <!-- HEADER -->
+    <nav class="bg-blue-600 shadow text-white">
+        <div class="container mx-auto px-6 py-3">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="flex justify-between items-center">
+                    <div class="text-xl font-semibold">
+                        <a href="/" class="text-white text-xl font-bold md:text-2xl">FranciscoSolis</a>
+                    </div>
+                </div>
+
+                <div class="md:flex md:items-center md:justify-end flex-1">
+                    <div class="flex items-center mt-4 md:mt-0">
+                        <span class="mx-2 mt-2 md:mt-0 px-2 py-1 text-sm text-white font-medium rounded-md transition-all duration-500 cursor-pointer hover:bg-white hover:shadow-xl hover:text-blue-600 cursor-pointer" onclick="toggleSearch()"><i class="fas fa-search"></i></span>
+                        {% for item in site.data.navigation %}
+                        <a class="mx-2 mt-2 md:mt-0 px-2 py-1 text-sm text-white font-medium rounded-md transition-all duration-500 cursor-pointer hover:bg-white hover:shadow-xl hover:text-blue-600" href="{{ item.link }}" target="{{ item.target }}">{{ item.name }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- CONTENT -->
+    <div class="my-5">
+        <div class="min-h-screen container mx-auto">
+            {{ content }}
+        </div>
+    </div>
+    <!-- FOOTER -->
+    <footer class="bg-blue-600">
+        <div class="container mx-auto px-6 py-4">
+            <div class="lg:flex">
+                <div class="w-full lg:w-2/5 -mx-6">
+                    <div class="px-6">
+                        <div>
+                            <a href="/" class="text-xl font-bold text-white hover:bg-gray-100">FranciscoSolis</a>
+                        </div>
+
+                        <p class="mt-2 text-gray-100 max-w-md">Programador de Software y Tutoriales</p>
+
+                        <div class="flex mt-4 -mx-2">
+                            <a target="_blank" href="https://twitter.com/Pancho_Solis_" class="mx-2 text-gray-100 hover:text-gray-400" aria-label="Twitter">
+                                <svg class="h-4 w-4 fill-current" viewBox="0 0 512 512">
+                                    <path d="M496,109.5a201.8,201.8,0,0,1-56.55,15.3,97.51,97.51,0,0,0,43.33-53.6,197.74,197.74,0,0,1-62.56,23.5A99.14,99.14,0,0,0,348.31,64c-54.42,0-98.46,43.4-98.46,96.9a93.21,93.21,0,0,0,2.54,22.1,280.7,280.7,0,0,1-203-101.3A95.69,95.69,0,0,0,36,130.4C36,164,53.53,193.7,80,211.1A97.5,97.5,0,0,1,35.22,199v1.2c0,47,34,86.1,79,95a100.76,100.76,0,0,1-25.94,3.4,94.38,94.38,0,0,1-18.51-1.8c12.51,38.5,48.92,66.5,92.05,67.3A199.59,199.59,0,0,1,39.5,405.6,203,203,0,0,1,16,404.2,278.68,278.68,0,0,0,166.74,448c181.36,0,280.44-147.7,280.44-275.8,0-4.2-.11-8.4-.31-12.5A198.48,198.48,0,0,0,496,109.5Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-6 lg:mt-0 lg:flex-1">
+                    <div class="grid gap-6 grid-cols-2 sm:grid-cols-3 md:grid-cols-4">
+                        <div>
+                            <h3 class="text-white uppercase font-bold">Enlaces</h3>
+                            <a class="block mt-2 text-sm text-gray-100" href="https://github.com/FranciscoSolisMat" target="_blank">GitHub</a>
+                        </div>
+
+                        <div>
+                            <h3 class="text-white uppercase font-bold">Productos</h3>
+                            <a class="block mt-2 text-sm text-gray-100" href="#">Proximamente</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="h-px my-6 text-gray-100border-none">
+
+            <div class="flex items-center justify-between">
+                <span class="inline-block text-center text-white">Hecho con <span class="text-red-400">&heartsuit;</span> por <a class="hover:text-red-400" href="/">FranciscoSolis</a>.</span>
+                <span class="inline-block text-center text-white">© FranciscoSolis 2021. All rights reserved</span>
+            </div>
+        </div>
+    </footer>
+</div>
+<script src="/assets/js/foot.js"></script>
+{% include searchmodal.html %}
+{% include foot.html %}
+</body>
+</html>

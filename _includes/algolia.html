@@ -1,0 +1,47 @@
+<script>
+    // Instantiating InstantSearch.js with Algolia credentials
+    const search = instantsearch({
+        appId: '{{ site.algolia.application_id }}',
+        indexName: '{{ site.algolia.index_name }}',
+        apiKey: '{{ site.algolia.search_only_api_key }}'
+    });
+
+    // Adding searchbar and results widgets
+    search.addWidget(
+        instantsearch.widgets.searchBox({
+            container: '#search-searchbar',
+            placeholder: 'Buscar en el blog...',
+            poweredBy: true, // This is required if you're on the free Community plan
+        })
+    );
+    search.addWidget(
+        instantsearch.widgets.hits({
+            container: '#search-hits',
+            templates: {
+                item: (hit) => {
+                    let date = moment.unix(hit.date).fromNow()
+                    if(hit.type === 'post'){
+                        return `
+                    <div class="border border-gray-700 mb-5 rounded-md p-5 hover:shadow-2xl transition-all duration-500 ease-in-out">
+                        <div class="flex flex-col">
+                            <div class="flex justify-between border-b border-gray-500 items-center">
+                                <h2 class="text-green-400 hover:text-green-500"><a href="{{ site.baseurl }}${hit.url}">${hit.title}</a></h2>
+                            </div>
+                            <span class="text-gray-500 line-clamp-3 my-3">${hit.excerpt_html}</span>
+                            <div class="flex justify-between">
+                                <span><a href="{{ site.baseurl }}${hit.url}" class="text-blue-500 hover:text-blue-700 transition-all duration-500 ease-in-out">Seguir leyendo...</a></span>
+                                <span class="text-gray-700"><a href="{{ site.baseurl }}/autores/${hit.author.toLowerCase()}.html" class="text-green-400  hover:text-green-500">${hit.author}</a> - ${date}</span>
+                            </div>
+                        </div>
+                    </div>
+                    `;
+                    }
+                    return ''
+                }
+            }
+        })
+    );
+
+    // Starting the search
+    search.start();
+</script>
