@@ -2,7 +2,12 @@
 for(let h of ["h1", "h2", "h3"]){
     for(let item of document.querySelectorAll(`${h}`)){
         if(item.id){
-            if(!item.classList.contains("cursor-pointer")) item.classList.add("cursor-pointer")
+            if(!item.classList.contains("cursor-pointer")) {
+                item.classList.add("cursor-pointer")
+                item.onclick = () => {
+                    item.scrollIntoView(true)
+                }
+            }
         }
     }
 }

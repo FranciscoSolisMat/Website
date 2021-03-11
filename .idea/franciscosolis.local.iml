@@ -8,5 +8,6 @@
     <orderEntry type="library" name="491028fdc2" level="application" />
     <orderEntry type="library" name="instantsearch.js" level="application" />
     <orderEntry type="library" name="dayjs" level="application" />
+    <orderEntry type="library" name="vue" level="application" />
   </component>
 </module>

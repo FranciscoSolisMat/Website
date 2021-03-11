@@ -8,9 +8,18 @@ title: Page!
         <img src="https://gravatar.com/avatar/{{ page.gravatar | downcase | md5 }}?s=100" alt="" class="rounded-md mr-5">
         <div class="flex-col">
             <h1 class="text-red-600">{{ page.name }}</h1>
-            <span class="text-gray-500">{{ page.content | markdownify }}</span>
+            <span class="text-gray-500 line-clamp-1">{{ page.content | markdownify }}</span> <!-- TODO Allow more than 1 line -->
         </div>
     </div>
+
+    {% if page.links.size > 0 %}
+    <span class="text-gray-500 mt-5">Links:</span>
+    <ul>
+        {% for link in page.links %}
+        <li>- <a class="text-green-400 hover:text-green-500" href="{{ link.action }}" target="{{ link.target }}">{{ link.display }}</a></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
 
     <div class="flex flex-col mt-10">
         <h2 class="tex-gray-800">Posts creados por {{ page.name }}</h2>

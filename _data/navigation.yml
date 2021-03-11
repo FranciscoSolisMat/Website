@@ -10,6 +10,6 @@
 - name: Sobre Mi
   link: /sobre-mi.html
   target: _self
-- name: Donar
-  link: http://go.franciscosolis.cl/donate
-  target: _blank
+- name: El Sitio Web
+  link:  /el-sitio-web.html
+  target: _self

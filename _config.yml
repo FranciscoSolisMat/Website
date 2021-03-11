@@ -10,7 +10,11 @@ plugins:
   - jekyll-mentions
   - jemoji
 
-# Timeago
+# Exclude
+exclude:
+  - build.sh
+
+  # Timeago
 jekyll_timeago:
   translations_path: '_data/timeago/*.yaml'
   default_locale: 'es'

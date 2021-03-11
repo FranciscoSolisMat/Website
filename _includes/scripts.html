@@ -5,5 +5,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/locale/es.min.js" integrity="sha512-L6Trpj0Q/FiqDMOD0FQ0dCzE0qYT2TFpxkIpXRSWlyPvaLNkGEMRuXoz6MC5PrtcbXtgDLAAI4VFtPvfYZXEtg==" crossorigin="anonymous"></script>
 <script>moment.locale('es')</script>
+{% if page.vue == true %}
+
+{% if jekyll.environment == 'production' %}
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+{% else %}
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+{% endif %}
+
+{% endif %}
 <script src="/assets/js/utils/md5.js"></script>
 <script src="/assets/js/app.js"></script>

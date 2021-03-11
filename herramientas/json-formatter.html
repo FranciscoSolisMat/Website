@@ -1,0 +1,59 @@
+---
+title: Formateador JSON
+vue: true
+---
+
+<div class="flex flex-col" id="json-app">
+    <div>
+        <h1 class="text-blue-600">Formateador JSON</h1>
+        <span class="text-gray-500">Quieres darle formato a tu JSON sin compartir datos privados? Este es tu lugar!</span>
+        <span class="text-gray-500">Te preguntas por que aparece tu anterior ejecucion de json? Esto es porque el anterior json ejecutado se guarda en tu computadora para más tarde.</span>
+    </div>
+
+    <div class="my-5">
+        <h3 class="text-gray-700">Ingresa el JSON:</h3>
+        <textarea class="w-full border focus:border border-gray-300 focus:border-gray-500 rounded-md p-2" aria-label="" v-model="json"></textarea>
+        <button v-on:click="execute" class="px-2 py-1 bg-blue-600 text-white hover:shadow-2xl hover:bg-white hover:text-blue-600 rounded-md">Ejecutar</button>
+    </div>
+
+    <div>
+        <h3 class="text-gray-700">Resultado del JSON:</h3>
+        <textarea class="w-full border focus:border border-gray-300 focus:border-gray-500 rounded-md p-2" aria-label="" v-model="pretty_json"></textarea>
+    </div>
+</div>
+
+
+<script>
+let vue = new Vue({
+    el: '#json-app',
+    data: {
+        json: null,
+        pretty_json: null,
+    },
+    methods: {
+        execute(){
+            try{
+                this.pretty_json = JSON.stringify(JSON.parse(this.json), null, 2);
+                localStorage.setItem("json_formatter_prev", btoa(this.json))
+            }catch (ex){
+                alert('Por favor verifica que el JSON sea valido.')
+            }
+        },
+    },
+    mounted(){
+        if(localStorage.getItem("json_formatter_prev")){
+            this.json = atob(localStorage.getItem("json_formatter_prev"))
+        }
+    }
+})
+
+/*
+function handleJSON(){
+    let output = document.getElementById("json-output");
+    let data = document.getElementById("json-input").textContent
+    if(data){
+        output.textContent = JSON.stringify(JSON.parse(data), null, 2)
+    }
+}
+ */
+</script>
