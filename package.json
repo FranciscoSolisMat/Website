@@ -1,0 +1,32 @@
+{
+  "name": "franciscosolis",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:routes": "node buildRoutes",
+    "build:dist": "node build",
+    "cache:clear": "node regenerateCache",
+    "serve:prod": "npm run build:dist && node serve",
+    "serve:dev": "DEBUG=1 node devServer",
+    "build:css:dev:watch": "npx tailwindcss --postcss -c ./tailwind.config.js -o ./assets/css/tailwind.css --minify --watch",
+    "build:css:dev": "npx tailwindcss --postcss -c ./tailwind.config.js -o ./assets/css/tailwind.css --minify",
+    "build:css:prod": "npx tailwindcss --postcss -c ./tailwind.config.js -o ./dist/assets/css/tailwind.css --minify"
+  },
+  "author": "Fran",
+  "license": "ISC",
+  "dependencies": {
+    "escape-html": "^1.0.3",
+    "express": "^4.17.1",
+    "markdown-it": "^12.2.0",
+    "marked": "^3.0.3",
+    "md5": "^2.3.0",
+    "mime": "^2.5.2",
+    "parse-md": "^2.0.4"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.3.4",
+    "postcss": "^8.3.6",
+    "tailwindcss": "^2.2.15"
+  }
+}

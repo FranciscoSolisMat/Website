@@ -1,0 +1,106 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}} | FranciscoSolis</title>
+    <link rel="stylesheet" href="/assets/css/tailwind.css">
+    <link rel="stylesheet" href="/assets/css/app.css">
+    <link rel="icon" href="/assets/img/favicon.ico" type="image/ico">
+    <script>'{{styles}}'.split(',').filter(data => !!data && data.length > 0).forEach(style => document.write('<link rel="stylesheet" href="/assets/css/' + style + '.css">'));</script>
+</head>
+<body>
+    <div id="page-body" class="">
+        <div class="bg-white dark:bg-gray-700">
+            <div class="text-brand-500 dark:text-brand-600">
+                <!-- Nav -->
+                <nav class="bg-brand-100 shadow text-white">
+                    <div class="mx-auto px-6 py-3">
+                        <div class="md:flex md:items-center md:justify-between">
+                            <div class="flex justify-between items-center">
+                                <div class="text-xl font-semibold">
+                                    <a href="/" class="text-white text-xl font-bold md:text-2xl flex items-center"><img src="/assets/img/LogoWhite.png" class="h-12 w-12">&nbsp;FranciscoSolis</Link>
+                                </div>
+                            </div>
+                            <div class="md:flex md:items-center md:justify-between flex-1">
+                                <div class="flex flex-col -mx-4 md:flex-row sm:items-end md:items-center md:mx-8">
+                                    <!-- Links -->
+                                    <a href="/" class="mx-2 mt-2 md:mt-0 px-2 py-1 text-sm text-white font-medium rounded-md transition-all duration-500 cursor-pointer hover:bg-white dark:hover:bg-gray-800 hover:shadow-xl hover:text-brand-100 hover:font-bold hover:text-md">Inicio</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+        
+                <!-- Content -->
+                <div class="my-5 min-h-screen container mx-auto text-brand-500 dark:text-brand-600">
+                    {{body}}
+                </div>
+        
+                <!-- Footer -->
+                <footer class="bg-brand-100">
+                    <div class="mx-auto px-6 py-4">
+                        <div class="lg:flex">
+                            <div class="w-full lg:w-2/5 -mx-6">
+                                <div class="px-6">
+                                    <div>
+                                        <a href="/" class="text-xl font-bold text-white hover:text-brand-600 flex items-center" preserve-state><img src="/assets/img/LogoWhite.png" class="h-10 w-10">&nbsp;FranciscoSolis</a>
+                                    </div>
+        
+                                    <p class="mt-2 text-brand-600 max-w-md">Programador de Software y Creador de Contenido</p>
+        
+                                    <div class="flex mt-4 -mx-2">
+                                        <a target="_blank" href="https://twitter.com/Im_Fran_" class="mx-2 text-gray-100 hover:text-gray-400" aria-label="Twitter">
+                                            <svg class="h-4 w-4 fill-current" viewBox="0 0 512 512">
+                                                <path d="M496,109.5a201.8,201.8,0,0,1-56.55,15.3,97.51,97.51,0,0,0,43.33-53.6,197.74,197.74,0,0,1-62.56,23.5A99.14,99.14,0,0,0,348.31,64c-54.42,0-98.46,43.4-98.46,96.9a93.21,93.21,0,0,0,2.54,22.1,280.7,280.7,0,0,1-203-101.3A95.69,95.69,0,0,0,36,130.4C36,164,53.53,193.7,80,211.1A97.5,97.5,0,0,1,35.22,199v1.2c0,47,34,86.1,79,95a100.76,100.76,0,0,1-25.94,3.4,94.38,94.38,0,0,1-18.51-1.8c12.51,38.5,48.92,66.5,92.05,67.3A199.59,199.59,0,0,1,39.5,405.6,203,203,0,0,1,16,404.2,278.68,278.68,0,0,0,166.74,448c181.36,0,280.44-147.7,280.44-275.8,0-4.2-.11-8.4-.31-12.5A198.48,198.48,0,0,0,496,109.5Z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+        
+                            <div class="mt-6 lg:mt-0 lg:flex-1">
+                                <div class="grid gap-6 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 md:justify-between">
+                                    <div>
+                                        <h3 class="text-white uppercase font-bold">Sobre Mi</h3>
+                                        <a href="/biografia" class="block mt-2 text-sm text-brand-600 hover:text-brand-200">Biografía</a>
+                                    </div>
+        
+                                    <!-- Pages -->
+                                    <div>
+                                        <h3 class="text-white uppercase font-bold">Información</h3>
+                                        <a href="/terminos-de-servicio" class="block mt-2 text-sm text-brand-600 hover:text-brand-200">Terminos de Servicio</a>
+                                        <a href="/politica-de-privacidad" class="block mt-2 text-sm text-brand-600 hover:text-brand-200">Politica de Privacidad</a>
+                                    </div>
+        
+                                    <!-- Products -->
+                                    <div>
+                                        <h3 class="text-white uppercase font-bold">Productos</h3>
+                                        <span class="block mt-2 text-sm text-brand-600 hover:text-brand-200 cursor-pointer visit-project" project="calendariodemre">Calendario DEMRE</span>
+                                        <span class="block mt-2 text-sm text-brand-600 hover:text-brand-200 cursor-pointer visit-repo" repo="Links">Perfil de Links</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                        <hr class="h-px my-6 bg-brand-600 border-none">
+        
+                        <div class="flex items-center justify-between">
+                            <span class="inline-block text-center text-white">Hecho con <span class="text-brand-200">&heartsuit;</span> por <a href="/">FranciscoSolis</a></span>
+                            <span class="inline-block text-center text-white">&copy; 2021 FranciscoSolis</span>
+                            <!-- Theme Switch -->
+                            <label id="switch" class="inline-block text-center text-white switch">
+                                <input type="checkbox" id="slider">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script>'{{scripts}}'.split(',').filter(data => !!data && data.length > 0).forEach(script => document.write('<script src="/assets/js/' + script + '.js"><' + '/script>'));</script>
+    <script src="/assets/js/app.js"></script>
+</body>
+</html>
