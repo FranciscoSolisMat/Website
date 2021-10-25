@@ -23,9 +23,9 @@ route: index
                 <p class="text-brand-500 dark:text-brand-600">Servicio de Links - Una página para almacenar tus links con iconos gratuitamente! <a class="text-brand-300" target="_blank" href="https://links.franciscosolis.cl/">Ejemplo</a>.</p>
             </div>
         </div>
-        <!-- CovidDataViewer - (repo) - Graficos COVID-19 - Una página para ver datos mundiales de COVID-19 en forma de graficos.  -->
+        <!-- CovidDataVisualizer - (repo) - Graficos COVID-19 - Una página para ver datos mundiales de COVID-19 en forma de graficos.  -->
         <div class="col-span-1 flex items-center justify-center">
-            <div class="bg-gray-200 dark:bg-gray-800 rounded-md py-5 px-3 border border-brand-500 hover:shadow-2xl duration-500 transition-shadow text-brand-500 cursor-pointer visit-repo" repo="CovidDataViewer">
+            <div class="bg-gray-200 dark:bg-gray-800 rounded-md py-5 px-3 border border-brand-500 hover:shadow-2xl duration-500 transition-shadow text-brand-500 cursor-pointer visit-repo" repo="CovidDataVisualizer">
                 <h3 class="text-lg font-bold text-brand-100">Graficos COVID-19</h3>
                 <p class="text-brand-500 dark:text-brand-600">Una página para ver datos mundiales de COVID-19 en forma de graficos.</p>
             </div>
